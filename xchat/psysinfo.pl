@@ -336,7 +336,7 @@ sub linux_disk_info {
 	my $total_disk = 0;
 	my $free_disk = 0;
 	for (`df 2>/dev/null`) {
-		if (/^\/dev\/(mapper\/\S+|(s|d|xd)va\d+)\s+(\d+)\s+\w+\s+(\d+)/) {
+		if (/^\/dev\/(mapper\/\S+|(s|h|x|xv)d[a-z]\d+)\s+(\d+)\s+\w+\s+(\d+)/) {
 			$total_disk += $3;
 			$free_disk += $4;
 		}
